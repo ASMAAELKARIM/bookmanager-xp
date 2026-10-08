@@ -1,16 +1,4 @@
-import pytest
 from src.book import Book
-from src.library import Library
-
-
-@pytest.fixture
-def bibliotheque():
-    return Library()
-
-
-@pytest.fixture
-def petit_prince():
-    return Book("Le Petit Prince", "Antoine de Saint-Exupery", "9782070612758")
 
 
 def test_rechercher_un_livre_existant(bibliotheque, petit_prince):
@@ -34,7 +22,6 @@ def test_rechercher_parmi_plusieurs_livres(bibliotheque, petit_prince):
     resultats = bibliotheque.rechercher_par_titre("Le Petit Prince")
 
     assert resultats == [petit_prince, autre_edition]
-
 
 
 def test_rechercher_par_auteur_existant(bibliotheque, petit_prince):

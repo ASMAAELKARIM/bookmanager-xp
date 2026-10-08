@@ -15,11 +15,15 @@ class Library:
 
     def rechercher_par_titre(self, titre: str) -> list[Book]:
         """Renvoie tous les livres dont le titre correspond."""
-        return [livre for livre in self.livres if livre.titre == titre]
+        return self._filtrer_livres("titre", titre)
 
     def rechercher_par_auteur(self, auteur: str) -> list[Book]:
         """Renvoie tous les livres de l'auteur donné."""
-        return [livre for livre in self.livres if livre.auteur == auteur]
+        return self._filtrer_livres("auteur", auteur)
+
+    def _filtrer_livres(self, champ: str, valeur: str) -> list[Book]:
+        """Renvoie les livres dont le champ donné a la valeur donnée."""
+        return [livre for livre in self.livres if getattr(livre, champ) == valeur]
 
     def ajouter_utilisateur(self, utilisateur: User) -> None:
         """Enregistre un adhérent."""
