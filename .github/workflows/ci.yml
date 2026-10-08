@@ -21,4 +21,4 @@ jobs:
         run: pip install pytest
 
       - name: Lancer les tests
-        run: python -m pytest -v || [ $? -eq 5 ]
+        run: python -m pytest -v
