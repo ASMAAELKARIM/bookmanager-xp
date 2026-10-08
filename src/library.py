@@ -14,3 +14,9 @@ class Library:
     def rechercher_par_titre(self, titre: str) -> list[Book]:
         """Renvoie tous les livres dont le titre correspond."""
         return [livre for livre in self.livres if livre.titre == titre]
+    
+
+
+    def rechercher_par_auteur(self, auteur: str) -> list[Book]:
+        """Renvoie tous les livres de l'auteur donné."""
+        return [livre for livre in self.livres if livre.auteur == auteur]
