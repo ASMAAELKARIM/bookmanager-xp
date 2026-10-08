@@ -18,7 +18,7 @@ def test_creer_un_livre_avec_titre_auteur_isbn(livre):
 
 
 def test_un_nouveau_livre_est_disponible_par_defaut(livre):
-    assert livre.disponible is False
+    assert livre.disponible is True
 
 
 def test_creer_un_livre_sans_titre_est_refuse():
